@@ -11,6 +11,8 @@ import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 S3_BUCKET = "trademe-property-listings"
+
+# Search for all residential property listings
 TRADEME_API_URL = "https://api.trademe.co.nz/v1/Search/Property/Residential.json"
 
 # Load credentials from environment variables

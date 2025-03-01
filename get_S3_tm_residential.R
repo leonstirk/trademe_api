@@ -79,7 +79,7 @@ df <- raw_df %>% select(listing_id, title, start_date, end_date, price_display, 
 
 df$start_date <- convDate(df$start_date)
 df$end_date   <- convDate(df$end_date)
-#df$as_at <- convDate(df$as_at)
+df$as_at <- convDate(df$as_at)
 
 #df$price_display
 ## Price variables

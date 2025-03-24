@@ -10,9 +10,9 @@ import logging
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-S3_BUCKET = "tm-rental-listings"
+S3_BUCKET = "tm-commercial-sales"
 
-# Search for all residential property listings
+# Search for all commercial sales listings
 TRADEME_API_URL = "https://api.trademe.co.nz/v1/Search/Property/CommercialSale.json"
 
 # Load credentials from environment variables
@@ -88,7 +88,7 @@ def fetch_and_store_trademe_listings():
             break  # Exit loop if response is malformed
 
         # Generate S3 file key for the page
-        file_key = f"rental-listings/{today}/page_{page}.json"
+        file_key = f"commercial-sales/{today}/page_{page}.json"
         
         # Upload page to S3 immediately
         try:
@@ -114,7 +114,7 @@ def fetch_and_store_trademe_listings():
         page += 1
 
     logging.info(f"All pages fetched and stored successfully.")
-    return {"statusCode": 200, "body": f"All pages stored in S3 under rental-listings/{today}/"}
+    return {"statusCode": 200, "body": f"All pages stored in S3 under commercial-sales/{today}/"}
 
 def lambda_handler(event, context):
     logging.info("Lambda function started...")

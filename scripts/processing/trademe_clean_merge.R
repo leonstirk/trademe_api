@@ -251,7 +251,7 @@ lapply(a[,'agency']$agency$Agents, function(x) { x$FullName })
 a[,'agency_reference']
 
 
-getTrimmedTibble <- funciton(a, v) {
+# getTrimmedTibble <- funciton(a, v) {
   ### Location variables
   
   ### Hedonic variables
@@ -262,8 +262,7 @@ getTrimmedTibble <- funciton(a, v) {
   
   ###
   
-  
-}
+# }
 
 
 
